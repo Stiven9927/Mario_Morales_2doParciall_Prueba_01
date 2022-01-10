@@ -11,4 +11,5 @@ public class msmm_MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.msmm_activity_main);
     }
+    private val;
 }
