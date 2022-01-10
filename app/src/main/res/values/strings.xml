@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Mario_Morales_2doParcial_Prueba_01</string>
+    <string name="Usuario">Usuario</string>
+    <string name="Password">Password</string>
+
+
 </resources>
