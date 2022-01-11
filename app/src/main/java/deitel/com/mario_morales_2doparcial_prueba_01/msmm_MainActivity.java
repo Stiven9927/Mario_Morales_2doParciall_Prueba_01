@@ -27,12 +27,13 @@ public class msmm_MainActivity extends AppCompatActivity {
         registrar = findViewById(R.id.Regis_button2);
     }
 
-    private void onClick(View view) {
-
-        if(user.matches("") || pass.matches("")){
+    public void onClick(View view) {
+        String usuario = user.getText().toString();
+        String password = pass.getText().toString();
+        if(user == "" || pass == ""){
             Toast.makeText(this, "Los datos son obligatorios.", Toast.LENGTH_SHORT).show();
-            return;
         }
+        return;
     }
 
     public void OnClickRegistrar(){
