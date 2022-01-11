@@ -3,9 +3,14 @@ package deitel.com.mario_morales_2doparcial_prueba_01;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class msmm_Activity2 extends AppCompatActivity {
+
+    private EditText editTextCodigo;
+    private EditText editTextUser;
+    private EditText editTextPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,27 +20,25 @@ public class msmm_Activity2 extends AppCompatActivity {
 
     private void insertar() {
 
-        ClienteDAL dal=new ClienteDAL(this);
+        UserDal dal=new UserDal(this);
 
-        String user = editTextNombre.getText().toString();
-        String password = editTextApellido.getText().toString();
+        String user = editTextUser.getText().toString();
+        String password = editTextPass.getText().toString();
 
-        if(us.matches("") || apellido.matches("")){
+        if(user.matches("") || password.matches("")){
             Toast.makeText(this, "Los datos son obligatorios.", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        Cliente cliente=new Cliente();
+        msmm_user Usuario =new msmm_user();
 
-        cliente.setNombre(nombre);
-        cliente.setApellido(apellido);
-        cliente.setCorreo(correo);
-        long cantidad=dal.insert(cliente);
+        Usuario.setUser(user);
+        Usuario.setUserPassword(password);
+        long cantidad=dal.insert(user);
 
-        editTextNombre.setText("");
-        editTextApellido.setText("");
-        editTextCorreo.setText("");
+        editTextPass.setText("");
+        editTextUser.setText("");
 
-        Toast.makeText(this, "Se insertó un cliente", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Se registro un usuario", Toast.LENGTH_SHORT).show();
     }
 }

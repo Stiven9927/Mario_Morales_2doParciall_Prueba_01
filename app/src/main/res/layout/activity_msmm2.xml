@@ -7,7 +7,7 @@
     tools:context=".msmm_Activity2">
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/PASSeditTextTextPersonName3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -17,13 +17,13 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/USEReditTextTextPersonName2" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/USEReditTextTextPersonName2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="144dp"
         android:ems="10"
         android:hint="@string/Usuario"
         android:inputType="textPersonName"

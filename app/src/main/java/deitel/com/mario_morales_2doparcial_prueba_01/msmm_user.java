@@ -2,19 +2,18 @@ package deitel.com.mario_morales_2doparcial_prueba_01;
 
 public class msmm_user {
     private int codigo;
-    private String nombre;
-    private String apellido;
-    private String correo;
+    private String user;
+    private String password;
 
     public msmm_user() {
 
     }
 
-    public msmm_user(int codigo, String nombre, String apellido, String correo) {
+    public msmm_user(int codigo, String user, String password) {
         this.codigo = codigo;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.correo = correo;
+        this.user = user;
+        this.password = password;
+
     }
     public int getCodigo() {
         return codigo;
@@ -24,27 +23,16 @@ public class msmm_user {
         this.codigo = codigo;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getUser() {
+        return user;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setPassword(String nombre) {
+        this.password = password;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getPassword() {
+        return password;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
 }

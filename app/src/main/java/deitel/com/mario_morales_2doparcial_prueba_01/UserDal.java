@@ -31,9 +31,8 @@ public class UserDal {
             ContentValues values = new ContentValues();
 
             ContentValues listaValores = new ContentValues();
-            values.put("user", user.getNombre());
-            values.put("Password", user.getApellido());
-            values.put("Correo", user.getCorreo());
+            values.put("user", user.getUser());
+            values.put("Password", user.getPassword());
 
             count = sql.insert("users", null, values);
 
