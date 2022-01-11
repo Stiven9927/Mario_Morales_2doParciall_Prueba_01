@@ -12,8 +12,10 @@ import android.widget.Toast;
 
 public class msmm_MainActivity extends AppCompatActivity {
 
-    EditText user, pass;
-    Button aceptar;
+    private EditText user;
+    private EditText pass;
+    private Button aceptar;
+    private Button registrar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,22 +24,18 @@ public class msmm_MainActivity extends AppCompatActivity {
         user = findViewById(R.id.User_editText);
         pass = findViewById(R.id.Pass_editText);
         aceptar = findViewById(R.id.Acep_button);
-
-     aceptar.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View view) {
-            if(user.getText().toString() == "" && pass.getText().toString() == ""){
-
-                Toast.makeText(msmm_MainActivity, "Correcto", Toast.LENGTH_SHORT).show();
-            }else{
-                Toast.makeText(msmm_MainActivity, "Credenciales Incorrectas", Toast.LENGTH_SHORT).show();
-             }
-         }
-
-     });
+        registrar = findViewById(R.id.Regis_button2);
     }
 
-    public void OnClickregistrar(View view){
+    private void onClick(View view) {
+
+        if(user.matches("") || pass.matches("")){
+            Toast.makeText(this, "Los datos son obligatorios.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+    }
+
+    public void OnClickRegistrar(){
         Intent intent = new Intent(this, msmm_Activity2.class);
         startActivity(intent);
     }
