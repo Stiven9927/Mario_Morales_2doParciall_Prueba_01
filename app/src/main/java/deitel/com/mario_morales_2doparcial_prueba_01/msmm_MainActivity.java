@@ -26,13 +26,20 @@ public class msmm_MainActivity extends AppCompatActivity {
      aceptar.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
-            if(user.getText().toString().equals == "" && pass.getText().toString().equals("123")){
-                Intent intent = new Intent(this, msmm_Activity2.class);
+            if(user.getText().toString() == "" && pass.getText().toString() == ""){
+
                 Toast.makeText(msmm_MainActivity, "Correcto", Toast.LENGTH_SHORT).show();
             }else{
                 Toast.makeText(msmm_MainActivity, "Credenciales Incorrectas", Toast.LENGTH_SHORT).show();
              }
          }
+
      });
     }
+
+    public void OnClickregistrar(View view){
+        Intent intent = new Intent(this, msmm_Activity2.class);
+        startActivity(intent);
+    }
+
 }
