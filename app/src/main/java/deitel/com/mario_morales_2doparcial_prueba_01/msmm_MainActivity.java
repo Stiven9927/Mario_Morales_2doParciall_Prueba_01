@@ -3,6 +3,8 @@ package deitel.com.mario_morales_2doparcial_prueba_01;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
@@ -33,7 +35,6 @@ public class msmm_MainActivity extends AppCompatActivity {
         if(user == "" || pass == ""){
             Toast.makeText(this, "Los datos son obligatorios.", Toast.LENGTH_SHORT).show();
         }
-        return;
     }
 
     public void OnClickRegistrar(){
@@ -41,4 +42,28 @@ public class msmm_MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void BuscarSinClase(View view){
+        user_helper user_helper = new user_helper(this,
+                "userDB", null, 1);
+
+        SQLiteDatabase sql = user_helper.getReadableDatabase();//lectura
+
+        String codigo = ed.getText().toString();
+
+
+        String consulta = "SELECT Codigo, user, Password FROM Users WHERE Codigo=" + codigo;
+
+        //Indices
+        Cursor cursor = sql.rawQuery(consulta, null);
+        //ciclo where
+        if(cursor.moveToFirst())
+        {
+            user.setText(cursor.getString(1));
+            pass.setText(cursor.getString(2));
+
+        }else{
+            Toast.makeText(this, "No se encontraron registros en la tabla", Toast.LENGTH_LONG).show();
+        }
+        sql.close();
+    }
 }

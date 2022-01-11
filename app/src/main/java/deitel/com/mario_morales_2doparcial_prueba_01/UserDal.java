@@ -15,7 +15,7 @@ public class UserDal {
     }
 
     public void open(){
-        user_helper = new user_helper(context, "clientesDB", null, 1);
+        user_helper = new user_helper(context, "userDB", null, 1);
         sql = user_helper.getWritableDatabase();
 
     }
@@ -35,7 +35,6 @@ public class UserDal {
             values.put("Password", user.getPassword());
 
             count = sql.insert("users", null, values);
-
         }
         catch (Exception e){
             throw e;
