@@ -27,7 +27,8 @@ public class msmm_MainActivity extends AppCompatActivity {
          @Override
          public void onClick(View view) {
             if(user.getText().toString().equals("user") && pass.getText().toString().equals("123")){
-                //Intent intent = new Intent(this, );
+                Intent intent = new Intent(this, msmm_Activity2.class);
+                Toast.makeText(msmm_MainActivity, "Correcto", Toast.LENGTH_SHORT).show();
             }else{
                 Toast.makeText(msmm_MainActivity, "Credenciales Incorrectas", Toast.LENGTH_SHORT).show();
              }

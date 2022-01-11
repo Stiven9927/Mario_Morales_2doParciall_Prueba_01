@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mario_Morales_2doParcial_Prueba_01">
         <activity
+            android:name=".msmm_Activity2"
+            android:exported="true" />
+        <activity
             android:name=".msmm_MainActivity"
             android:exported="true">
             <intent-filter>
